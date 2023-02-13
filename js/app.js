@@ -3,11 +3,22 @@ console.log('ciao');
 //mostra all'utente numeri random
 alert ('Memorizza questi numeri'+ ' ' + randomNumbs());
 
-// timer di 30 secondi
+//intervallo di 30 secondi
+setTimeout(function(){
 
-let counter = 30
+    //l’utente inserisce, uno alla volta, i numeri, tramite il prompt()
+    let userNumb = []
 
-let clock = setInterval(onInterval, 1000)
+    while (userNumb.length < 5){
+        let userNumbAsk = prompt('inserisci uno numero dei precedenti');
+        console.log(userNumbAsk);
+
+        userNumb.push(userNumbAsk);
+        console.log(userNumb)
+    }
+    //Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali numeri sono stati individuati tramite console.log
+
+},3000); 
 
 //numero random da memorizzare
 function randomNumbs(){
@@ -24,25 +35,3 @@ function randomNumbs(){
 
     return numbers;
 }
-
-function onInterval() {
-    counter--
-
-    console.log(counter)
-
-    if (counter === 0) {
-        //interrompere
-        clearInterval(clock)
-        
-    }
-}
-
-
-
-
-//l’utente inserisce, uno alla volta, i numeri, tramite il prompt()
-//Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali numeri sono stati individuati tramite console.log
-
-
-
-
