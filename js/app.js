@@ -4,7 +4,7 @@ console.log('ciao');
 alert ('Memorizza questi numeri'+ ' ' + randomNumbs());
 
 //intervallo di 30 secondi
-setTimeout(userNumb,3000); 
+setTimeout(userNumb,30000); 
 
 //numero random da memorizzare
 function randomNumbs(){
