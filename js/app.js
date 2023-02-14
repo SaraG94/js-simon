@@ -1,10 +1,31 @@
-console.log('ciao');
+const numbers = randomNumbs();
 
+let askNumb = [];
+
+const winNumb =[];
 //mostra all'utente numeri random
-alert ('Memorizza questi numeri'+ ' ' + randomNumbs());
+alert ('Memorizza questi numeri'+ ' ' + numbers +' '+'Chiuso questo avviso dopo 30 secondi potrai inserirli ');
+
 
 //intervallo di 30 secondi
-setTimeout(userNumb,30000); 
+setTimeout(function (){
+
+    while (askNumb.length < 5){
+        let userNumbAsk = parseInt(prompt('inserisci uno numero dei precedenti')) ;
+
+        if(numbers.includes(userNumbAsk) && !askNumb.includes(userNumbAsk) ){
+            console.log('Hai indovinato');
+    
+            winNumb.push(userNumbAsk);
+        }
+
+        askNumb.push(userNumbAsk);
+        console.log(userNumbAsk);
+    }
+    
+
+    console.log(`Hai indovinato ${winNumb.length} numeri.I numeri che hai invodinato sono ${winNumb.join(', ' )}`);
+} ,30000); 
 
 //numero random da memorizzare
 function randomNumbs(){
@@ -23,24 +44,4 @@ function randomNumbs(){
 }
 
 //l’utente inserisce, uno alla volta, i numeri, tramite il prompt()
-function userNumb (numbers){
-    
-    let askNumb = []
 
-    while (askNumb.length < 5){
-    let userNumbAsk = prompt('inserisci uno numero dei precedenti');
-    console.log(userNumbAsk);
-
-    askNumb.push(parseInt(userNumbAsk));
-    console.log(askNumb);
-    }
-    
-    let check = askNumb.includes(numbers);
-
-    for (let i = 0; i < numbers.length; i++){
-        if(check === true);
-        console.log('ricordato');
-    }
-
-    return askNumb;
-}
