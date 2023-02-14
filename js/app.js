@@ -3,19 +3,19 @@ const numbers = randomNumbs();
 let askNumb = [];
 
 const winNumb =[];
+
 //mostra all'utente numeri random
 alert ('Memorizza questi numeri'+ ' ' + numbers +' '+'Chiuso questo avviso dopo 30 secondi potrai inserirli ');
 
 
 //intervallo di 30 secondi
-setTimeout(function (){
-
+setTimeout( function (){
+    //l’utente inserisce, uno alla volta, i numeri, tramite il prompt()
     while (askNumb.length < 5){
         let userNumbAsk = parseInt(prompt('inserisci uno numero dei precedenti')) ;
-
+        //se il numero è corretto push in winNumb
         if(numbers.includes(userNumbAsk) && !askNumb.includes(userNumbAsk) ){
-            console.log('Hai indovinato');
-    
+          
             winNumb.push(userNumbAsk);
         }
 
@@ -23,7 +23,6 @@ setTimeout(function (){
         console.log(userNumbAsk);
     }
     
-
     console.log(`Hai indovinato ${winNumb.length} numeri.I numeri che hai invodinato sono ${winNumb.join(', ' )}`);
 } ,30000); 
 
@@ -42,6 +41,3 @@ function randomNumbs(){
 
     return numbers;
 }
-
-//l’utente inserisce, uno alla volta, i numeri, tramite il prompt()
-
